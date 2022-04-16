@@ -21,22 +21,32 @@ struct FiatCurrenciesListView: View {
   
   var body: some View {
     NavigationView {
-      List {
-        ForEach(searchResults, id: \.self) { fiatCurrency in
+      ZStack {
+        List {
+          ForEach(searchResults, id: \.self) { fiatCurrency in
             FiatCurrencyRow(fiatCurrency: fiatCurrency)
-            .onTapGesture {
-              presentationMode.wrappedValue.dismiss()
-            }
-        }
-      }
-      .navigationTitle("Fiat Currencies")
-      .searchable(text: $searchText)
-      .toolbar {
-        ToolbarItem(placement: .navigationBarTrailing) {
-          Button("Dismiss") {
-            presentationMode.wrappedValue.dismiss()
+              .onTapGesture {
+                presentationMode.wrappedValue.dismiss()
+              }
           }
         }
+        .listStyle(.insetGrouped)
+        .navigationTitle(viewModel.title)
+        .searchable(text: $searchText)
+        .toolbar {
+          ToolbarItem(placement: .navigationBarTrailing) {
+            Button("Dismiss") {
+              presentationMode.wrappedValue.dismiss()
+            }
+          }
+        }
+        
+        Text(viewModel.errorMessage ?? "")
+          .sb_setHidden(!viewModel.showError)
+        
+        ProgressView()
+          .progressViewStyle(.circular)
+          .sb_setHidden(!viewModel.isFetching)
       }
     }
     .onAppear { viewModel.loadData() }

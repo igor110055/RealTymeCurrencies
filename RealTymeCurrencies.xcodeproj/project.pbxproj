@@ -39,6 +39,8 @@
 		680107AC280A3ED3005A1BCD /* FiatCurrenciesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680107AB280A3ED3005A1BCD /* FiatCurrenciesService.swift */; };
 		680107AE280A3F67005A1BCD /* FiatCurrenciesServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680107AD280A3F67005A1BCD /* FiatCurrenciesServiceClient.swift */; };
 		680107B0280A4398005A1BCD /* FiatCurrencyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680107AF280A4398005A1BCD /* FiatCurrencyRow.swift */; };
+		680107B2280AF379005A1BCD /* CryptoCurrencyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680107B1280AF379005A1BCD /* CryptoCurrencyDetailView.swift */; };
+		680107B4280AF62C005A1BCD /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680107B3280AF62C005A1BCD /* Double+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		680107AB280A3ED3005A1BCD /* FiatCurrenciesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatCurrenciesService.swift; sourceTree = "<group>"; };
 		680107AD280A3F67005A1BCD /* FiatCurrenciesServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatCurrenciesServiceClient.swift; sourceTree = "<group>"; };
 		680107AF280A4398005A1BCD /* FiatCurrencyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatCurrencyRow.swift; sourceTree = "<group>"; };
+		680107B1280AF379005A1BCD /* CryptoCurrencyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyDetailView.swift; sourceTree = "<group>"; };
+		680107B3280AF62C005A1BCD /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 				68010797280A1768005A1BCD /* CryptoCurrencyRow.swift */,
 				680107A5280A3B33005A1BCD /* FiatCurrenciesListView.swift */,
 				680107AF280A4398005A1BCD /* FiatCurrencyRow.swift */,
+				680107B1280AF379005A1BCD /* CryptoCurrencyDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				68010795280A1507005A1BCD /* Date+Extensions.swift */,
+				680107B3280AF62C005A1BCD /* Double+Extension.swift */,
 				6801079D280A24E9005A1BCD /* View+Extension.swift */,
 			);
 			path = Extensions;
@@ -302,6 +308,7 @@
 				68010796280A1507005A1BCD /* Date+Extensions.swift in Sources */,
 				680107932809CB08005A1BCD /* CryptocurrenciesServiceClient.swift in Sources */,
 				6801075E2808C533005A1BCD /* ContentView.swift in Sources */,
+				680107B4280AF62C005A1BCD /* Double+Extension.swift in Sources */,
 				680107722809A9FB005A1BCD /* CryptoCurrencyDetail.swift in Sources */,
 				680107A2280A38A1005A1BCD /* FiatCurrencies.swift in Sources */,
 				680107912809C869005A1BCD /* CryptocurrenciesService.swift in Sources */,
@@ -321,6 +328,7 @@
 				680107762809B5B6005A1BCD /* ImageItem.swift in Sources */,
 				6801079E280A24E9005A1BCD /* View+Extension.swift in Sources */,
 				680107AE280A3F67005A1BCD /* FiatCurrenciesServiceClient.swift in Sources */,
+				680107B2280AF379005A1BCD /* CryptoCurrencyDetailView.swift in Sources */,
 				680107AA280A3E78005A1BCD /* FiatCurrenciesRepository.swift in Sources */,
 				680107892809C61A005A1BCD /* NetworkError.swift in Sources */,
 				6801076A2808C6EC005A1BCD /* CryptocurrencyListView.swift in Sources */,

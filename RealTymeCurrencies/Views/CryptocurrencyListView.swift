@@ -21,7 +21,7 @@ struct CryptocurrencyListView: View {
         List {
           Section {
             ForEach(viewModel.datasource) { cryptoCurrency in
-              NavigationLink(destination: Text(cryptoCurrency.name)) {
+              NavigationLink(destination: CryptoCurrencyDetailView(cryptoCurrencyDetail: cryptoCurrency)) {
                 CryptoCurrencyRow(cryptoCurrency: cryptoCurrency)
               }
             }

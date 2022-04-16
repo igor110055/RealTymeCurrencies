@@ -20,7 +20,7 @@ struct CryptoCurrencyRow: View {
         .clipped()
       Text(cryptoCurrency.symbol.uppercased())
       Spacer()
-      Text(NumberUtility.formatValue(NSNumber(value: cryptoCurrency.currentPrice), maximumFractionDigits: 2))
+      Text(cryptoCurrency.currentPrice.sb_formattedPriceString)
     }
     .padding(.top, 5)
     .padding(.bottom, 5)
