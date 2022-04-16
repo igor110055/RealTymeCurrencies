@@ -55,10 +55,9 @@ private struct ListHeader: View {
     HStack {
       Text("Fiat Currency")
       Button("USD") { self.isPresented = true }
-      .onTapGesture {
-        print("TODO: Implement Later")
+      .fullScreenCover(isPresented: $isPresented) {
+        FiatCurrenciesListView()
       }
-      
     }
     .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
   }

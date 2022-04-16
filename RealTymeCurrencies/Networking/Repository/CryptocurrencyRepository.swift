@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol CryptocurrenciesRepositoryProtocol {
+  func fetchCryptocurrencies()
+}
+
 class CryptocurrencyRepository: CryptocurrenciesRepositoryProtocol {
   
   var client: NetworkProviderProtocol?
@@ -21,6 +25,7 @@ class CryptocurrencyRepository: CryptocurrenciesRepositoryProtocol {
 }
 
 private extension CryptocurrencyRepository {
+  
   func fetchCryptoCurrencies(client: NetworkProviderProtocol) {
     client.request(dataType: [CryptoCurrency].self, onQueue: .main) { [weak self] result in
       do {
@@ -30,4 +35,5 @@ private extension CryptocurrencyRepository {
       }
     }
   }
+  
 }

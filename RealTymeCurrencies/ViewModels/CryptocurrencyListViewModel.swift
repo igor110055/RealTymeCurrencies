@@ -13,7 +13,8 @@ class CryptocurrencyListViewModel: ListViewModelProtocol {
   @Published private(set) var datasource: [CryptoCurrencyDetail] = []
   @Published private(set) var showError = false
   @Published private(set) var isFetching = false
-  var errorMessage: String?
+  
+  private(set) var errorMessage: String?
   private var repository: CryptocurrenciesRepositoryProtocol
   private var cancellables = Set<AnyCancellable>()
   

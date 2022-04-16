@@ -17,14 +17,4 @@ struct CryptocurrenciesServiceClient: NetworkProviderProtocol {
     self.service = clientService
   }
   
-  func request<T>(dataType: T.Type,
-                  onQueue: DispatchQueue,
-                  completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
-    urlSession.dataTask(service.urlRequest, dataType: dataType) { result in
-      onQueue.async {
-        completion(result)
-      }
-    }.resume()
-  }
-  
 }
