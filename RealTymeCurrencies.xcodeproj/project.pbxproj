@@ -41,6 +41,7 @@
 		680107B0280A4398005A1BCD /* FiatCurrencyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680107AF280A4398005A1BCD /* FiatCurrencyRow.swift */; };
 		680107B2280AF379005A1BCD /* CryptoCurrencyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680107B1280AF379005A1BCD /* CryptoCurrencyDetailView.swift */; };
 		680107B4280AF62C005A1BCD /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680107B3280AF62C005A1BCD /* Double+Extension.swift */; };
+		680107B6280B4E3F005A1BCD /* SBTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680107B5280B4E3F005A1BCD /* SBTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		680107AF280A4398005A1BCD /* FiatCurrencyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatCurrencyRow.swift; sourceTree = "<group>"; };
 		680107B1280AF379005A1BCD /* CryptoCurrencyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyDetailView.swift; sourceTree = "<group>"; };
 		680107B3280AF62C005A1BCD /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		680107B5280B4E3F005A1BCD /* SBTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			children = (
 				680107772809B62D005A1BCD /* ThreadSafeDictionary.swift */,
 				6801079F280A3386005A1BCD /* NumberUtility.swift */,
+				680107B5280B4E3F005A1BCD /* SBTimer.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				680107AA280A3E78005A1BCD /* FiatCurrenciesRepository.swift in Sources */,
 				680107892809C61A005A1BCD /* NetworkError.swift in Sources */,
 				6801076A2808C6EC005A1BCD /* CryptocurrencyListView.swift in Sources */,
+				680107B6280B4E3F005A1BCD /* SBTimer.swift in Sources */,
 				6801078B2809C61A005A1BCD /* NetworkProviderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

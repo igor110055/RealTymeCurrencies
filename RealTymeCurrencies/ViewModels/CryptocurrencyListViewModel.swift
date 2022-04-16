@@ -18,8 +18,18 @@ class CryptocurrencyListViewModel: ListViewModelProtocol {
   private var repository: CryptocurrenciesRepositoryProtocol
   private var cancellables = Set<AnyCancellable>()
   
+  private var isDataLoaded = false
+  
+  private lazy var timer = SBTimer(timeInterval: 10.0) { [weak self] in
+    guard let self = self else { return }
+    if self.isDataLoaded {
+      self.loadData()
+    }
+  }
+  
   init(repository: CryptocurrenciesRepositoryProtocol = CryptocurrencyRepository()) {
     self.repository = repository
+    timer.start()
   }
   
   func loadData() {
@@ -39,13 +49,19 @@ class CryptocurrencyListViewModel: ListViewModelProtocol {
     .store(in: &cancellables)
   }
   
+  deinit {
+    timer.stop()
+  }
+  
 }
 
 private extension CryptocurrencyListViewModel {
   func handleSuccess(data: [CryptoCurrency]) {
     datasource = CryptoCurrencyAdaptor.generateCryptoCurrencyDetailList(from: data)
     title = "\("Cryptocurrencies") (\(datasource.count))"
+    showError = false
     isFetching = false
+    isDataLoaded = true
   }
   
   func handleFailure(error: Error?) {
@@ -53,5 +69,6 @@ private extension CryptocurrencyListViewModel {
     errorMessage = "\(error)"
     showError = true
     isFetching = false
+    isDataLoaded = true
   }
 }

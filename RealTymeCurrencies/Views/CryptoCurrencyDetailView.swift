@@ -23,14 +23,14 @@ struct CryptoCurrencyDetailView: View {
         }
         
         Text("Symbol: \(cryptoCurrencyDetail.symbol.uppercased())")
-        Text("Current Price: \(cryptoCurrencyDetail.currentPrice.sb_formattedPriceString)")
-        Text("All Time Highest Price: \(cryptoCurrencyDetail.allTimeHighestPrice.sb_formattedPriceString)")
-        Text("All Time Lowest Price: \(cryptoCurrencyDetail.allTimeLowestPrice.sb_formattedPriceString)")
-        Text("Highest Price In 24H: \(cryptoCurrencyDetail.highestPriceIn24h.sb_formattedPriceString)")
-        Text("Lowest Price In 24H: \(cryptoCurrencyDetail.lowestPriceIn24h.sb_formattedPriceString)")
-        Text("All Time Highest Date: \(cryptoCurrencyDetail.allTimeHighestDate?.sb_formattedLongDateString ?? "")")
-        Text("All Time Lowest Date: \(cryptoCurrencyDetail.allTimeLowestDate?.sb_formattedLongDateString ?? "")")
-        Text("Last Updated Date: \(cryptoCurrencyDetail.lastUpdatedDate?.sb_formattedLongDateString ?? "")")
+        Text("Current Price: \(cryptoCurrencyDetail.currentPriceString)")
+        Text("All Time Highest Price: \(cryptoCurrencyDetail.allTimeHighestPriceString)")
+        Text("All Time Lowest Price: \(cryptoCurrencyDetail.allTimeLowestPriceString)")
+        Text("Highest Price In 24H: \(cryptoCurrencyDetail.highestPriceIn24hString)")
+        Text("Lowest Price In 24H: \(cryptoCurrencyDetail.lowestPriceIn24hString)")
+        Text("All Time Highest Date: \(cryptoCurrencyDetail.allTimeHighestDateString)")
+        Text("All Time Lowest Date: \(cryptoCurrencyDetail.allTimeLowestDateString)")
+        Text("Last Updated Date: \(cryptoCurrencyDetail.lastUpdatedDateString)")
       }
     }
     .navigationTitle(cryptoCurrencyDetail.name)

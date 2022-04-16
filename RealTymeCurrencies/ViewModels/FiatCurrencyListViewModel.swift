@@ -55,6 +55,7 @@ private extension FiatCurrencyListViewModel {
     Self.fiatCurrencies = data
     datasource = data
     title = "\("Fiat Currencies") (\(datasource.count))"
+    showError = false
     isFetching = false
   }
   

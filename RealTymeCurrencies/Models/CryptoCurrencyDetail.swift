@@ -41,14 +41,14 @@ struct CryptoCurrency: Decodable {
 class CryptoCurrencyDetail: Identifiable, ObservableObject {
   
   @Published var image: UIImage
-  @Published var currentPrice: Double
-  @Published var highestPriceIn24h: Double
-  @Published var lowestPriceIn24h: Double
-  @Published var allTimeHighestPrice: Double
-  @Published var allTimeLowestPrice: Double
-  @Published var allTimeHighestDate: Date?
-  @Published var allTimeLowestDate: Date?
-  @Published var lastUpdatedDate: Date?
+  @Published var currentPriceString: String
+  @Published var highestPriceIn24hString: String
+  @Published var lowestPriceIn24hString: String
+  @Published var allTimeHighestPriceString: String
+  @Published var allTimeLowestPriceString: String
+  @Published var allTimeHighestDateString: String
+  @Published var allTimeLowestDateString: String
+  @Published var lastUpdatedDateString: String
   
   let id: String
   lazy var symbol: String = { cryptoCurrency.symbol }()
@@ -59,16 +59,19 @@ class CryptoCurrencyDetail: Identifiable, ObservableObject {
   
   init(cryptoCurrency: CryptoCurrency) {
     self.cryptoCurrency = cryptoCurrency
-    self.id = cryptoCurrency.id
+    self.id = cryptoCurrency.id +
+      cryptoCurrency.currentPrice.sb_formattedPriceString +
+      (cryptoCurrency.lastUpdatedDate?.sb_formattedLongDateString ?? "")
+    
     self.image = placeholderImage
-    self.currentPrice = cryptoCurrency.currentPrice
-    self.highestPriceIn24h = cryptoCurrency.highestPriceIn24h
-    self.lowestPriceIn24h = cryptoCurrency.lowestPriceIn24h
-    self.allTimeHighestPrice = cryptoCurrency.allTimeHighestPrice
-    self.allTimeLowestPrice = cryptoCurrency.allTimeLowestPrice
-    self.allTimeHighestDate = cryptoCurrency.allTimeHighestDate
-    self.allTimeLowestDate = cryptoCurrency.allTimeLowestDate
-    self.lastUpdatedDate = cryptoCurrency.lastUpdatedDate
+    self.currentPriceString = cryptoCurrency.currentPrice.sb_formattedPriceString
+    self.highestPriceIn24hString = cryptoCurrency.highestPriceIn24h.sb_formattedPriceString
+    self.lowestPriceIn24hString = cryptoCurrency.lowestPriceIn24h.sb_formattedPriceString
+    self.allTimeHighestPriceString = cryptoCurrency.allTimeHighestPrice.sb_formattedPriceString
+    self.allTimeLowestPriceString = cryptoCurrency.allTimeLowestPrice.sb_formattedPriceString
+    self.allTimeHighestDateString = cryptoCurrency.allTimeHighestDate?.sb_formattedLongDateString ?? ""
+    self.allTimeLowestDateString = cryptoCurrency.allTimeLowestDate?.sb_formattedLongDateString ?? ""
+    self.lastUpdatedDateString = cryptoCurrency.lastUpdatedDate?.sb_formattedLongDateString ?? ""
   }
   
   func fetchImage() {

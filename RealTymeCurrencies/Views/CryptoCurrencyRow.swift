@@ -20,7 +20,7 @@ struct CryptoCurrencyRow: View {
         .clipped()
       Text(cryptoCurrency.symbol.uppercased())
       Spacer()
-      Text(cryptoCurrency.currentPrice.sb_formattedPriceString)
+      Text(cryptoCurrency.currentPriceString)
     }
     .padding(.top, 5)
     .padding(.bottom, 5)

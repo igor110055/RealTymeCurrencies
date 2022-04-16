@@ -41,9 +41,8 @@ struct CryptocurrencyListView: View {
           .sb_setHidden(!viewModel.isFetching)
       }
     }
-    .onAppear {
-      viewModel.loadData()
-    }
+    .navigationViewStyle(.stack)
+    .onAppear { viewModel.loadData() }
   }
   
 }
