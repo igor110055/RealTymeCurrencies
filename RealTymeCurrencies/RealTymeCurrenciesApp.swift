@@ -9,10 +9,14 @@ import SwiftUI
 
 @main
 struct RealTymeCurrenciesApp: App {
+  
+  @ObservedObject var environmentObjects = EnvironmentObjects()
+  
   var body: some Scene {
     WindowGroup {
       ContentView()
         .onAppear(perform: setAppareance)
+        .environmentObject(environmentObjects)
     }
   }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct CryptocurrencyListView: View {
   
   @ObservedObject var viewModel: CryptocurrencyListViewModel
+  @EnvironmentObject var environmentObjects: EnvironmentObjects
   
   init(viewModel: CryptocurrencyListViewModel = CryptocurrencyListViewModel()) {
     self.viewModel = viewModel
@@ -20,7 +21,7 @@ struct CryptocurrencyListView: View {
       ZStack {
         List {
           Section {
-            ForEach(viewModel.datasource) { cryptoCurrency in
+            ForEach(viewModel.showError ? [] : viewModel.datasource) { cryptoCurrency in
               NavigationLink(destination: CryptoCurrencyDetailView(cryptoCurrencyDetail: cryptoCurrency)) {
                 CryptoCurrencyRow(cryptoCurrency: cryptoCurrency)
               }
@@ -49,11 +50,14 @@ struct CryptocurrencyListView: View {
 
 
 private struct ListHeader: View {
+  
   @State var isPresented = false
+  @EnvironmentObject var environmentObjects: EnvironmentObjects
+  
   var body: some View {
     HStack {
       Text("Fiat Currency")
-      Button("USD") { self.isPresented = true }
+      Button(environmentObjects.selectedFiatCurrencySymbol) { self.isPresented = true }
       .fullScreenCover(isPresented: $isPresented) {
         FiatCurrenciesListView()
       }

@@ -27,7 +27,7 @@ class FiatCurrenciesRepository: FiatCurrenciesRepositoryProtocol {
 private extension FiatCurrenciesRepository {
   
   func fetchFiatCurrencies(client: NetworkProviderProtocol) {
-    client.request(dataType: FiatCurrencies.self, onQueue: .main) { [weak self] result in
+    let dataTask = client.dataTask(dataType: FiatCurrencies.self, onQueue: .main) { [weak self] result in
       switch result {
       case .success(let currencies):
         self?.fiatCurrencies = currencies.fiatCurrencies
@@ -35,6 +35,7 @@ private extension FiatCurrenciesRepository {
         self?.error = error
       }
     }
+    dataTask.resume()
   }
   
 }

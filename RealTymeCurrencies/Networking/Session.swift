@@ -66,7 +66,7 @@ private extension Session {
 }
 
 
-extension JSONDecoder.DateDecodingStrategy {
+public extension JSONDecoder.DateDecodingStrategy {
   static let iso8601withFractionalSeconds = custom {
     let container = try $0.singleValueContainer()
     let string = try container.decode(String.self)
@@ -78,7 +78,7 @@ extension JSONDecoder.DateDecodingStrategy {
   }
 }
 
-extension Formatter {
+public extension Formatter {
   static let iso8601withFractionalSeconds: DateFormatter = {
     let formatter = DateFormatter()
     formatter.calendar = Calendar(identifier: .iso8601)

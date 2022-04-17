@@ -11,8 +11,6 @@ struct FiatCurrencyRow: View {
   
   @StateObject var fiatCurrency: FiatCurrency
   
-  @Environment(\.presentationMode) var presentationMode
-  
   var body: some View {
     HStack {
       Text(fiatCurrency.id)

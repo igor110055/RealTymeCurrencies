@@ -14,5 +14,6 @@ protocol ListViewModelProtocol: ObservableObject {
   var datasource: DataItem { get }
   var showError: Bool { get }
   var errorMessage: String? { get }
+  var isFetching: Bool { get }
   func loadData()
 }

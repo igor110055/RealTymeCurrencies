@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CryptocurrenciesRepositoryProtocol {
-  func fetchCryptocurrencies()
+  func fetchCryptocurrencies(fiatCurrency: String)
 }
 
 class CryptocurrencyRepository: CryptocurrenciesRepositoryProtocol {
@@ -17,8 +17,11 @@ class CryptocurrencyRepository: CryptocurrenciesRepositoryProtocol {
   @Published var cryptoCurrencies = [CryptoCurrency]()
   @Published var error: Error?
   
-  func fetchCryptocurrencies() {
-    client = CryptocurrenciesServiceClient(clientService: CryptocurrenciesService())
+  private var previousDataTask: URLSessionDataTask?
+  
+  func fetchCryptocurrencies(fiatCurrency: String) {
+    previousDataTask?.cancel()
+    client = CryptocurrenciesServiceClient(clientService: CryptocurrenciesService(fiatCurrency: fiatCurrency))
     fetchCryptoCurrencies(client: client!)
   }
   
@@ -27,13 +30,14 @@ class CryptocurrencyRepository: CryptocurrenciesRepositoryProtocol {
 private extension CryptocurrencyRepository {
   
   func fetchCryptoCurrencies(client: NetworkProviderProtocol) {
-    client.request(dataType: [CryptoCurrency].self, onQueue: .main) { [weak self] result in
+    previousDataTask = client.dataTask(dataType: [CryptoCurrency].self, onQueue: .main) { [weak self] result in
       do {
         self?.cryptoCurrencies = try result.get()
       } catch {
         self?.error = error
       }
     }
+    previousDataTask?.resume()
   }
   
 }

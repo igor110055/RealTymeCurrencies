@@ -13,6 +13,8 @@ final class SBTimer {
   
   private var timeInterval: TimeInterval
   private var timerHandler: TimerHandler?
+  private let skipFirstTick: Bool
+  private var firstTicked = false
   
   private var _timer: Timer?
   
@@ -26,16 +28,22 @@ final class SBTimer {
     }
   }
   
-  init(timeInterval: TimeInterval, handler: TimerHandler?) {
+  init(timeInterval: TimeInterval, skipFirstTick: Bool, handler: TimerHandler?) {
     self.timeInterval = timeInterval
+    self.skipFirstTick = skipFirstTick
     self.timerHandler = handler
   }
   
   @objc private func timerTicked() {
+    if skipFirstTick && !firstTicked {
+      firstTicked = true
+      return
+    }
     timerHandler?()
   }
   
   func stop() {
+    firstTicked = false
     timer?.invalidate()
     _timer = nil
   }

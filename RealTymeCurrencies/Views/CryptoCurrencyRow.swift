@@ -10,6 +10,7 @@ import SwiftUI
 struct CryptoCurrencyRow: View {
   
   @StateObject var cryptoCurrency: CryptoCurrencyDetail
+  @EnvironmentObject private var environmentObjects: EnvironmentObjects
   
   var body: some View {
     HStack {
@@ -20,7 +21,7 @@ struct CryptoCurrencyRow: View {
         .clipped()
       Text(cryptoCurrency.symbol.uppercased())
       Spacer()
-      Text(cryptoCurrency.currentPriceString)
+      Text(cryptoCurrency.currentPriceString + " " + environmentObjects.selectedFiatCurrencySymbol)
     }
     .padding(.top, 5)
     .padding(.bottom, 5)

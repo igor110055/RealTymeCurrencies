@@ -14,6 +14,7 @@ struct FiatCurrenciesListView: View {
   @State private var searchText = ""
   
   @Environment(\.presentationMode) var presentationMode
+  @EnvironmentObject var environmentObjects: EnvironmentObjects
   
   init(viewModel: FiatCurrencyListViewModel = FiatCurrencyListViewModel()) {
     self.viewModel = viewModel
@@ -26,6 +27,8 @@ struct FiatCurrenciesListView: View {
           ForEach(searchResults, id: \.self) { fiatCurrency in
             FiatCurrencyRow(fiatCurrency: fiatCurrency)
               .onTapGesture {
+                LocalStorage.shared.selectedFiatCurrency = fiatCurrency.id
+                environmentObjects.selectedFiatCurrencySymbol = fiatCurrency.id
                 presentationMode.wrappedValue.dismiss()
               }
           }

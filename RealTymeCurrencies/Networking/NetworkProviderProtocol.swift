@@ -12,22 +12,22 @@ public protocol NetworkProviderProtocol {
   var urlSession: SessionProtocol { get }
   var service: NetworkService { get }
   
-  func request<T: Decodable>(dataType: T.Type,
-                             onQueue: DispatchQueue,
-                             completion: @escaping (Result<T, Error>) -> Void)
+  func dataTask<T: Decodable>(dataType: T.Type,
+                              onQueue: DispatchQueue,
+                              completion: @escaping (Result<T, Error>) -> Void) -> URLSessionDataTask
   
 }
 
 extension NetworkProviderProtocol {
   
-  func request<T>(dataType: T.Type,
-                  onQueue: DispatchQueue,
-                  completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
-    urlSession.dataTask(service.urlRequest, dataType: dataType) { result in
+  func dataTask<T: Decodable>(dataType: T.Type,
+                              onQueue: DispatchQueue,
+                              completion: @escaping (Result<T, Error>) -> Void) -> URLSessionDataTask {
+    return urlSession.dataTask(service.urlRequest, dataType: dataType) { result in
       onQueue.async {
         completion(result)
       }
-    }.resume()
+    }
   }
   
 }
