@@ -36,7 +36,7 @@ private extension CryptocurrencyRepository {
   
   func fetchCryptoCurrencies(client: NetworkProviderProtocol) {
     previousDataTask = client.dataTask(dataType: [CryptoCurrency].self, onQueue: .main) { [weak self] result in
-      self?.client = nil
+      defer { self?.client = nil }
       do {
         self?.cryptoCurrencies = try result.get()
       } catch {

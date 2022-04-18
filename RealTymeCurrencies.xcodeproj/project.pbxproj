@@ -44,7 +44,20 @@
 		680107B6280B4E3F005A1BCD /* SBTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680107B5280B4E3F005A1BCD /* SBTimer.swift */; };
 		680107BE280B8D24005A1BCD /* EnvironmentObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680107BD280B8D24005A1BCD /* EnvironmentObjects.swift */; };
 		680107C0280BA81F005A1BCD /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680107BF280BA81F005A1BCD /* LocalStorage.swift */; };
+		680107D7280CE17B005A1BCD /* RealTymeCurrenciesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680107D6280CE17B005A1BCD /* RealTymeCurrenciesTests.swift */; };
+		680107DE280CE19D005A1BCD /* CryptoCurrencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 680107DD280CE19D005A1BCD /* CryptoCurrencies.json */; };
+		680107E0280CE1DC005A1BCD /* MockUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680107DF280CE1DC005A1BCD /* MockUrlProtocol.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		680107D8280CE17B005A1BCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 680107502808C533005A1BCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 680107572808C533005A1BCD;
+			remoteInfo = RealTymeCurrencies;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		680107582808C533005A1BCD /* RealTymeCurrencies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealTymeCurrencies.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,10 +99,21 @@
 		680107B5280B4E3F005A1BCD /* SBTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBTimer.swift; sourceTree = "<group>"; };
 		680107BD280B8D24005A1BCD /* EnvironmentObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjects.swift; sourceTree = "<group>"; };
 		680107BF280BA81F005A1BCD /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		680107D4280CE17B005A1BCD /* RealTymeCurrenciesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RealTymeCurrenciesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		680107D6280CE17B005A1BCD /* RealTymeCurrenciesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTymeCurrenciesTests.swift; sourceTree = "<group>"; };
+		680107DD280CE19D005A1BCD /* CryptoCurrencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CryptoCurrencies.json; sourceTree = "<group>"; };
+		680107DF280CE1DC005A1BCD /* MockUrlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		680107552808C533005A1BCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		680107D1280CE17B005A1BCD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -103,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				6801075A2808C533005A1BCD /* RealTymeCurrencies */,
+				680107D5280CE17B005A1BCD /* RealTymeCurrenciesTests */,
 				680107592808C533005A1BCD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				680107582808C533005A1BCD /* RealTymeCurrencies.app */,
+				680107D4280CE17B005A1BCD /* RealTymeCurrenciesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,6 +266,16 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		680107D5280CE17B005A1BCD /* RealTymeCurrenciesTests */ = {
+			isa = PBXGroup;
+			children = (
+				680107DF280CE1DC005A1BCD /* MockUrlProtocol.swift */,
+				680107D6280CE17B005A1BCD /* RealTymeCurrenciesTests.swift */,
+				680107DD280CE19D005A1BCD /* CryptoCurrencies.json */,
+			);
+			path = RealTymeCurrenciesTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,6 +296,24 @@
 			productReference = 680107582808C533005A1BCD /* RealTymeCurrencies.app */;
 			productType = "com.apple.product-type.application";
 		};
+		680107D3280CE17B005A1BCD /* RealTymeCurrenciesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 680107DA280CE17B005A1BCD /* Build configuration list for PBXNativeTarget "RealTymeCurrenciesTests" */;
+			buildPhases = (
+				680107D0280CE17B005A1BCD /* Sources */,
+				680107D1280CE17B005A1BCD /* Frameworks */,
+				680107D2280CE17B005A1BCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				680107D9280CE17B005A1BCD /* PBXTargetDependency */,
+			);
+			name = RealTymeCurrenciesTests;
+			productName = RealTymeCurrenciesTests;
+			productReference = 680107D4280CE17B005A1BCD /* RealTymeCurrenciesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -272,6 +326,10 @@
 				TargetAttributes = {
 					680107572808C533005A1BCD = {
 						CreatedOnToolsVersion = 13.0;
+					};
+					680107D3280CE17B005A1BCD = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 680107572808C533005A1BCD;
 					};
 				};
 			};
@@ -289,6 +347,7 @@
 			projectRoot = "";
 			targets = (
 				680107572808C533005A1BCD /* RealTymeCurrencies */,
+				680107D3280CE17B005A1BCD /* RealTymeCurrenciesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -301,6 +360,14 @@
 				6801079A280A1AFA005A1BCD /* Bitcoin.json in Resources */,
 				680107632808C534005A1BCD /* Preview Assets.xcassets in Resources */,
 				680107602808C534005A1BCD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		680107D2280CE17B005A1BCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				680107DE280CE19D005A1BCD /* CryptoCurrencies.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +415,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		680107D0280CE17B005A1BCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				680107D7280CE17B005A1BCD /* RealTymeCurrenciesTests.swift in Sources */,
+				680107E0280CE1DC005A1BCD /* MockUrlProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		680107D9280CE17B005A1BCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 680107572808C533005A1BCD /* RealTymeCurrencies */;
+			targetProxy = 680107D8280CE17B005A1BCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		680107642808C534005A1BCD /* Debug */ = {
@@ -525,6 +609,50 @@
 			};
 			name = Release;
 		};
+		680107DB280CE17B005A1BCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sametberberoglu.RealTymeCurrenciesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RealTymeCurrencies.app/RealTymeCurrencies";
+			};
+			name = Debug;
+		};
+		680107DC280CE17B005A1BCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sametberberoglu.RealTymeCurrenciesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RealTymeCurrencies.app/RealTymeCurrencies";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -542,6 +670,15 @@
 			buildConfigurations = (
 				680107672808C534005A1BCD /* Debug */,
 				680107682808C534005A1BCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		680107DA280CE17B005A1BCD /* Build configuration list for PBXNativeTarget "RealTymeCurrenciesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				680107DB280CE17B005A1BCD /* Debug */,
+				680107DC280CE17B005A1BCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
