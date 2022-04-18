@@ -16,7 +16,7 @@ class CryptocurrencyListViewModel: ListViewModelProtocol {
   @Published private(set) var isFetching = false
   
   private(set) var errorMessage: String?
-  private var repository: CryptocurrenciesRepositoryProtocol
+  private(set) var repository: CryptocurrenciesRepositoryProtocol
   private var cancellables = Set<AnyCancellable>()
   private var fiatCurrency = LocalStorage.shared.selectedFiatCurrency
   
